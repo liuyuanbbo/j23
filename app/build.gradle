@@ -1,0 +1,18 @@
+bootJar {
+    archiveFileName = 'app.jar'
+    enabled = true
+}
+
+jar {
+    enabled = false
+}
+
+dependencies {
+    implementation(
+            'org.springframework.boot:spring-boot-starter-web'
+    )
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+    compileOnly(libraries.'lombok') // 在编译的时候生效
+    annotationProcessor(libraries.'lombok') // 在注解的时候让其生效
+    annotationProcessor('org.springframework.boot:spring-boot-configuration-processor')
+}

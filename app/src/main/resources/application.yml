@@ -1,0 +1,5 @@
+server:
+  port: 23001
+spring:
+  application:
+    name: app

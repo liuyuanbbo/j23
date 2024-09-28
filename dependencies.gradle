@@ -1,0 +1,11 @@
+// 定义所有要使用的版本号
+ext.versions = [
+        springboot: '3.3.4',
+        lombok    : '1.18.34'
+]
+// 定义所有的依赖库
+ext.libraries = [
+        // 以下的配置为SpringBoot项目所需要的核心依赖
+        'spring-boot-gradle-plugin': "org.springframework.boot:spring-boot-gradle-plugin:${versions.springboot}",
+        'lombok'                   : "org.projectlombok:lombok:${versions.lombok}"
+]
