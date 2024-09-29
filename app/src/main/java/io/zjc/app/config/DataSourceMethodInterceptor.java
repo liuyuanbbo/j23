@@ -23,12 +23,14 @@ public class DataSourceMethodInterceptor implements Ordered {
     }
 
     @Before("execution(* io.zjc.app.mapper..*Mapper.*(..))")
-    public void dynamicSetDataSoruce(JoinPoint joinPoint) {
+    public void dynamicSetDataSource(JoinPoint joinPoint) {
 
         Class<?> clazz = joinPoint.getTarget().getClass();
         String className = clazz.getName();
+        log.info("class name : {}", className);
         if (ClassUtils.isAssignable(clazz, Proxy.class)) {
             className = joinPoint.getSignature().getDeclaringTypeName();
+            log.info("proxy name : {}", className);
         }
         String methodName = joinPoint.getSignature().getName();
 
