@@ -9,7 +9,11 @@ jar {
 
 dependencies {
     implementation(
-            'org.springframework.boot:spring-boot-starter-web'
+            'org.springframework.boot:spring-boot-starter-web',
+            'org.springframework.boot:spring-boot-starter-aop',
+            'com.baomidou:mybatis-plus-spring-boot3-starter:3.5.8',
+            'com.mysql:mysql-connector-j:8.4.0',
+            'org.mariadb.jdbc:mariadb-java-client:3.4.1'
     )
     testImplementation('org.springframework.boot:spring-boot-starter-test')
     compileOnly(libraries.'lombok') // 在编译的时候生效

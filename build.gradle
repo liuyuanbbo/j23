@@ -49,6 +49,15 @@ subprojects {
     tasks.withType(JavaCompile) {   // 编译编码配置
         options.encoding = 'UTF-8' // 定义编码
     }
+
+    tasks.withType(JavaCompile) {
+        options.compilerArgs += '--enable-preview'
+    }
+
+    tasks.withType(Test) {
+        jvmArgs += '--enable-preview'
+    }
+
     gradle.taskGraph.whenReady {    // 在所有的操作准备好后触发
         tasks.each { task ->    // 找出所有的任务
             if (task.name.contains('test')) {   // 如果现在发现有test任务

@@ -1,0 +1,6 @@
+logging:
+  level:
+    root:
+      io.zjc.app: debug
+      org.springframework: debug
+      mybatis: debug

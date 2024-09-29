@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.zjc.app.mapper.mariadb.mytest.StanCatalogueDirMapper">
+    <resultMap id="BaseResultMap" type="io.zjc.app.pojo.mariadb.mytest.StanCatalogueDir">
+        <id column="dir_id" jdbcType="INTEGER" property="dirId"/>
+        <result column="dir_code" jdbcType="VARCHAR" property="dirCode"/>
+        <result column="dir_name" jdbcType="VARCHAR" property="dirName"/>
+        <result column="dir_type" jdbcType="VARCHAR" property="dirType"/>
+        <result column="parent_dir_id" jdbcType="INTEGER" property="parentDirId"/>
+        <result column="dir_full_path" jdbcType="VARCHAR" property="dirFullPath"/>
+        <result column="dir_sort" jdbcType="INTEGER" property="dirSort"/>
+        <result column="dir_desc" jdbcType="VARCHAR" property="dirDesc"/>
+        <result column="cata_id" jdbcType="INTEGER" property="cataId"/>
+        <result column="cata_type" jdbcType="VARCHAR" property="cataType"/>
+        <result column="status_cd" jdbcType="VARCHAR" property="statusCd"/>
+        <result column="create_by" jdbcType="INTEGER" property="createBy"/>
+        <result column="create_date" jdbcType="TIMESTAMP" property="createDate"/>
+        <result column="last_modify_by" jdbcType="INTEGER" property="lastModifyBy"/>
+        <result column="last_modify_date" jdbcType="TIMESTAMP" property="lastModifyDate"/>
+        <result column="com_acct_id" jdbcType="INTEGER" property="comAcctId"/>
+        <result column="coderule_id" jdbcType="INTEGER" property="coderuleId"/>
+        <result column="data_warehouse_id" jdbcType="INTEGER" property="dataWarehouseId"/>
+        <result column="datasource_id" jdbcType="INTEGER" property="datasourceId"/>
+        <result column="project_id" jdbcType="BIGINT" property="projectId"/>
+        <result column="meta_data_type" jdbcType="VARCHAR" property="metaDataType"/>
+        <result column="area" jdbcType="VARCHAR" property="area"/>
+        <result column="level" jdbcType="INTEGER" property="level"/>
+        <result column="source_system" jdbcType="VARCHAR" property="sourceSystem"/>
+        <result column="index_flag" jdbcType="VARCHAR" property="indexFlag"/>
+        <result column="dir_source" jdbcType="VARCHAR" property="dirSource"/>
+    </resultMap>
+</mapper>

@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    mysql:
+      dataportal:
+        driverClassName: com.mysql.cj.jdbc.Driver
+        jdbcUrl: jdbc:mysql://172.21.72.157:8009/dataportal
+        username: bdpuser
+        password: 'Bdp199!!'
+
+mybatis:
+  configuration:
+    mysql:
+      map-underscore-to-camel-case: on

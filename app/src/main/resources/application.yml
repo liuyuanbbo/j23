@@ -3,3 +3,8 @@ server:
 spring:
   application:
     name: app
+  config:
+    import:
+      - conf/local-mariadb.yml
+      - conf/app-log.yml
+      - conf/156O3-dataportal-mysql.yml
