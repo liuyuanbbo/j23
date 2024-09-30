@@ -17,8 +17,16 @@ public class StanCatalogueDirService {
     StanCatalogueDirMapper stanCatalogueDirMapper;
 
     public List<StanCatalogueDir> list() {
-        DataSourceContextHolder.setDataSourceType(DataSourceContextHolder.DATA_SOURCE_MARIADB_MYTEST);
+        DataSourceContextHolder.setDataSourceType(DataSourceContextHolder.DATA_SOURCE_MYSQL_DATAPORTAL_156O3);
         return stanCatalogueDirMapper.selectList(null);
     }
 
+    public List<StanCatalogueDir> selectCustomList() {
+        DataSourceContextHolder.setDataSourceType(DataSourceContextHolder.DATA_SOURCE_MYSQL_DATAPORTAL_156O3);
+        return stanCatalogueDirMapper.selectCustomList();
+    }
+
+    public List<StanCatalogueDir> selectListByDirId(Long dirId) {
+        return stanCatalogueDirMapper.selectListByDirId(dirId);
+    }
 }

@@ -4,3 +4,4 @@ logging:
       io.zjc.app: debug
       org.springframework: debug
       mybatis: debug
+      org.apache.ibatis: debug

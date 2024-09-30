@@ -7,7 +7,8 @@
         <result column="dir_name" jdbcType="VARCHAR" property="dirName"/>
         <result column="dir_type" jdbcType="VARCHAR" property="dirType"/>
         <result column="parent_dir_id" jdbcType="INTEGER" property="parentDirId"/>
-        <result column="dir_full_path" jdbcType="VARCHAR" property="dirFullPath"/>
+        <result column="dir_full_path" jdbcType="VARCHAR" property="dirFullPath"
+                typeHandler="io.zjc.app.config.CustomStringTypeHandler"/>
         <result column="dir_sort" jdbcType="INTEGER" property="dirSort"/>
         <result column="dir_desc" jdbcType="VARCHAR" property="dirDesc"/>
         <result column="cata_id" jdbcType="INTEGER" property="cataId"/>
@@ -29,4 +30,22 @@
         <result column="index_flag" jdbcType="VARCHAR" property="indexFlag"/>
         <result column="dir_source" jdbcType="VARCHAR" property="dirSource"/>
     </resultMap>
+
+    <sql id="baseSql">
+        dir_id,dir_code,dir_name,dir_type,parent_dir_id,dir_full_path,dir_sort,dir_desc
+        ,cata_id,cata_type,status_cd,create_by,create_date,last_modify_by,last_modify_date,com_acct_id,coderule_id
+        ,data_warehouse_id,datasource_id,project_id,meta_data_type,area,level,area,source_system,index_flag,dir_source
+    </sql>
+
+    <select id="selectCustomList" resultMap="BaseResultMap">
+        select <include refid="baseSql"/>
+        from stan_catalogue_dir
+    </select>
+    <!--通过dirId递归查询-->
+    <select id="selectListByDirId" resultMap="BaseResultMap">
+        select <include refid="baseSql"/>
+        from stan_catalogue_dir
+        where dir_id in
+        (select dir_full_path from stan_catalogue_dir where dir_id = #{dirId})
+    </select>
 </mapper>

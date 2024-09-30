@@ -31,6 +31,7 @@ public class MyBatisMyTestMariaDbConfig {
         sqlSessionFactoryBean.setDataSource(multipleDataSource);
         sqlSessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver()
                 .getResources("classpath:mapper/mariadb/mytest/*Mapper.xml"));
+        sqlSessionFactoryBean.addTypeHandlers(new CustomStringTypeHandler());
         return sqlSessionFactoryBean.getObject();
     }
 
